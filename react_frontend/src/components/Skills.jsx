@@ -2,12 +2,23 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
+import {Table} from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
 
+
+
 export const Skills = () => {
+
+  const tableData = [
+    { text: 'Text 1', icon: 'meter1' },
+    { text: 'Text 2', icon: 'icon2' },
+    { text: 'Text 3', icon: 'icon3' },
+    // add more rows as needed
+  ];
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -37,6 +48,20 @@ export const Skills = () => {
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <Table borderless className="mb-5">
+                          <tbody>
+                            {tableData.map((item, index) => (
+                              <tr key={index}>
+                                <td>
+                                  <i className={`icon ${item.icon}`} />
+                                  <span className="ml-2">{item.text}</span>
+                                </td>
+                                {/* Add a vertical split between the columns */}
+                                {index % 2 === 0 && <td className="border-left" />}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>                        
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
