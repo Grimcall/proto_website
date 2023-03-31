@@ -6,16 +6,28 @@ import {Table} from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
-
-
+import colorSharp from "../assets/img/color-sharp.png";
+import pythonIcon from "../assets/img/skill-icons/python.svg";
 
 export const Skills = () => {
 
   const tableData = [
-    { text: 'Text 1', icon: 'meter1' },
-    { text: 'Text 2', icon: 'icon2' },
-    { text: 'Text 3', icon: 'icon3' },
+    { text: 'Python', icon: pythonIcon},
+    { text: 'PostgreSQL', icon: 'icon2' },
+    { text: 'QT', icon: 'icon3' },
+    { text: 'SQLAlchemy', icon: 'icon3' },
+    { text: 'Flask', icon: 'icon3' },
+    { text: 'React', icon: 'icon3' },
+    { text: 'JavaScript', icon: 'icon3' },
+    { text: 'Node.js', icon: 'icon3' },
+    { text: 'Github', icon: 'icon3' },
+    { text: 'Heroku', icon: 'icon3' },
+    { text: 'Pandas', icon: 'icon3' },
+    { text: 'C++', icon: 'icon3' },
+    { text: 'Java', icon: 'icon3' },
+    { text: 'HTML', icon: 'icon3' },
+    { text: 'CSS', icon: 'icon3' },
+    { text: 'SQLite', icon: 'icon3' },
     // add more rows as needed
   ];
 
@@ -53,7 +65,7 @@ export const Skills = () => {
                             {tableData.map((item, index) => (
                               <tr key={index}>
                                 <td>
-                                  <i className={`icon ${item.icon}`} />
+                                  <img className="skilltable-icon" src={item.icon} alt={item.text} />
                                   <span className="ml-2">{item.text}</span>
                                 </td>
                                 {/* Add a vertical split between the columns */}
