@@ -302,9 +302,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 
+.skilltable {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
 .skilltable-icon {
-  width: 32px;
-  height: 32px;
+  max-width: 60px;
+  max-height: 50px; 
+  object-fit: cover;
+}
+
+.skilltable-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skilltable-text {
+  margin-top: 5px;
+  text-align: center;
+  color: white;
 }
 
 .skill {

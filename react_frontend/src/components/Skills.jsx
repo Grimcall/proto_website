@@ -7,33 +7,53 @@ import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png";
-import pythonIcon from "../assets/img/skill-icons/python.svg";
+
+//Icon imports
+import pythonIcon from "../assets/img/skill-icons/python.png";
+import postgresqlIcon from "../assets/img/skill-icons/postgresql.png";
+import qtIcon from "../assets/img/skill-icons/qt.png";
+import sqlalchemyIcon from "../assets/img/skill-icons/sqlalchemy.png";
+import flaskIcon from "../assets/img/skill-icons/flask.png";
+import reactIcon from "../assets/img/skill-icons/react.png";
+import javascriptIcon from "../assets/img/skill-icons/javascript.png";
+import nodejsIcon from "../assets/img/skill-icons/nodejs.png";
+import gitIcon from "../assets/img/skill-icons/git.png";
+import herokuIcon from "../assets/img/skill-icons/heroku.png";
+import pandasIcon from "../assets/img/skill-icons/pandas.png";
+import cppIcon from "../assets/img/skill-icons/c++.png";
+import javaIcon from "../assets/img/skill-icons/java.png";
+import htmlIcon from "../assets/img/skill-icons/html.png";
+import cssIcon from "../assets/img/skill-icons/css.png";
+import sqliteIcon from "../assets/img/skill-icons/sqlite.png";
 
 export const Skills = () => {
 
   const tableData = [
     { text: 'Python', icon: pythonIcon},
-    { text: 'PostgreSQL', icon: 'icon2' },
-    { text: 'QT', icon: 'icon3' },
-    { text: 'SQLAlchemy', icon: 'icon3' },
-    { text: 'Flask', icon: 'icon3' },
-    { text: 'React', icon: 'icon3' },
-    { text: 'JavaScript', icon: 'icon3' },
-    { text: 'Node.js', icon: 'icon3' },
-    { text: 'Github', icon: 'icon3' },
-    { text: 'Heroku', icon: 'icon3' },
-    { text: 'Pandas', icon: 'icon3' },
-    { text: 'C++', icon: 'icon3' },
-    { text: 'Java', icon: 'icon3' },
-    { text: 'HTML', icon: 'icon3' },
-    { text: 'CSS', icon: 'icon3' },
-    { text: 'SQLite', icon: 'icon3' },
+    { text: 'PostgreSQL', icon: postgresqlIcon },
+    { text: 'QT', icon: qtIcon },
+    { text: 'SQLAlchemy', icon: sqlalchemyIcon },
+    { text: 'Flask', icon: flaskIcon },
+    { text: 'React', icon: reactIcon },
+    { text: 'JavaScript', icon: javascriptIcon },
+    { text: 'Node.js', icon: nodejsIcon },
+    { text: 'Git', icon: gitIcon },
+    { text: 'Heroku', icon: herokuIcon },
+    { text: 'Pandas', icon: pandasIcon },
+    { text: 'C++', icon: cppIcon },
+    { text: 'Java', icon: javaIcon },
+    { text: 'HTML', icon: htmlIcon },
+    { text: 'CSS', icon: cssIcon },
+    { text: 'SQLite', icon: sqliteIcon },
     // add more rows as needed
   ];
 
+  const halfLength = Math.ceil(tableData.length / 2);
+  const tableData1 = tableData.slice(0, halfLength);
+  const tableData2 = tableData.slice(halfLength);
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       // Need to expand skill section to include languages known.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
@@ -60,20 +80,41 @@ export const Skills = () => {
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                        <Table borderless className="mb-5">
-                          <tbody>
-                            {tableData.map((item, index) => (
-                              <tr key={index}>
-                                <td>
-                                  <img className="skilltable-icon" src={item.icon} alt={item.text} />
-                                  <span className="ml-2">{item.text}</span>
-                                </td>
-                                {/* Add a vertical split between the columns */}
-                                {index % 2 === 0 && <td className="border-left" />}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </Table>                        
+                       
+                        <Table borderless className="skilltable">
+                            <tbody>
+                              {tableData1.map((item, index) => (
+                                <tr key={index}>
+                                  
+                                  <td>
+                                    <div className="skilltable-item-container">
+                                      <img
+                                        className="skilltable-icon"
+                                        src={item.icon}
+                                        alt={item.text}
+                                      />
+                                      <div className="skilltable-text">{item.text}</div>
+                                    </div>
+                                  </td>
+
+                                  <td>
+                                  <div className="skilltable-item-container">
+                                    <img
+                                      className="skilltable-icon"
+                                      src={tableData2[index].icon}
+                                      alt={tableData2[index].text}
+                                    />
+                                    <div className="skilltable-text">
+                                      {tableData2[index].text}
+                                    </div>
+                                  </div>
+
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                        </Table>
+                 
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
