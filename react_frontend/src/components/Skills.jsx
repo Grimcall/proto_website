@@ -2,13 +2,12 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
-import {Table} from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png";
 
-//Icon imports
+
+/*Hard Skills*/
+import {Table} from 'react-bootstrap';
 import pythonIcon from "../assets/img/skill-icons/python.png";
 import postgresqlIcon from "../assets/img/skill-icons/postgresql.png";
 import qtIcon from "../assets/img/skill-icons/qt.png";
@@ -25,6 +24,7 @@ import javaIcon from "../assets/img/skill-icons/java.png";
 import htmlIcon from "../assets/img/skill-icons/html.png";
 import cssIcon from "../assets/img/skill-icons/css.png";
 import sqliteIcon from "../assets/img/skill-icons/sqlite.png";
+
 
 export const Skills = () => {
 
@@ -52,9 +52,10 @@ export const Skills = () => {
   const tableData1 = tableData.slice(0, halfLength);
   const tableData2 = tableData.slice(halfLength);
 
+
+
   const responsive = {
     superLargeDesktop: {
-      // Need to expand skill section to include languages known.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -78,58 +79,43 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
+                        <h2>What can I do for you?</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                       
-                        <Table borderless className="skilltable">
+
+                          <Table borderless className="skilltable">
                             <tbody>
                               {tableData1.map((item, index) => (
-                                <tr key={index}>
-                                  
-                                  <td>
-                                    <div className="skilltable-item-container">
-                                      <img
-                                        className="skilltable-icon"
-                                        src={item.icon}
-                                        alt={item.text}
-                                      />
-                                      <div className="skilltable-text">{item.text}</div>
-                                    </div>
-                                  </td>
+                              <tr key={index}>     
 
-                                  <td>
-                                  <div className="skilltable-item-container">
-                                    <img
-                                      className="skilltable-icon"
-                                      src={tableData2[index].icon}
-                                      alt={tableData2[index].text}
-                                    />
-                                    <div className="skilltable-text">
-                                      {tableData2[index].text}
-                                    </div>
-                                  </div>
+                              <td className="skilltable-item-container">
+                                <img className="skilltable-icon" src={item.icon} alt={item.text}/>
+                                <div className="skilltable-text">{item.text}</div>
+                              </td>
 
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                        </Table>
-                 
+                              <td className="skilltable-item-container">
+                               <img className="skilltable-icon" src={tableData2[index].icon} alt={tableData2[index].text}/>
+                               <div className="skilltable-text"> {tableData2[index].text} </div>
+                              </td>
+                        </tr>
+                        ))}
+                    </tbody>
+                    </Table>
+
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={meter1} alt="" />
                                 <h5>Software Development</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={meter2} alt="" />
                                 <h5>Mobile App Design</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
+                                <img src={meter3} alt="" />
                                 <h5>Backend Systems</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={meter1} alt="" />
                                 <h5>UI/UX Design</h5>
                             </div>
                         </Carousel>
@@ -137,7 +123,7 @@ export const Skills = () => {
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        <img className="background-image-left" src={colorSharp} alt="" />
     </section>
   )
 }
