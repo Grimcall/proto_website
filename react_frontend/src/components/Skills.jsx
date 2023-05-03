@@ -79,7 +79,7 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>What can I do for you?</h2>
+                        <h2>What do I do?</h2>
                         <p>I have been coding for aproximately three and a half years.<br>
                         </br>The tools and programming languages below are what I'm going to use to help you with what you need.<br>
                         </br>Don't forget, however, that these are *just* tools.</p>
@@ -117,13 +117,15 @@ export const Skills = () => {
                                 <h5>Web App Design</h5>
                             </div>
                             <div className="item">
+                                <img src={meter2} alt="" />
+                                <h5>UI/UX Design</h5>
+                            </div>    
+                            <div className="item">
                                 <img src={meter1} alt="" />
                                 <h5>Backend Development</h5>
-                            </div>                            
+                            </div>                           
                         </Carousel>
-
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
         </div>
