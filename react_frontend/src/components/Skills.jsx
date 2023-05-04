@@ -24,6 +24,8 @@ import javaIcon from "../assets/img/skill-icons/java.png";
 import htmlIcon from "../assets/img/skill-icons/html.png";
 import cssIcon from "../assets/img/skill-icons/css.png";
 import sqliteIcon from "../assets/img/skill-icons/sqlite.png";
+import figmaIcon from "../assets/img/skill-icons/figma.png";
+import photoshopIcon from "../assets/img/skill-icons/ps.png";
 
 
 export const Skills = () => {
@@ -45,9 +47,8 @@ export const Skills = () => {
     { text: 'HTML', icon: htmlIcon },
     { text: 'CSS', icon: cssIcon },
     { text: 'SQLite', icon: sqliteIcon},
-    { text: 'Figma', icon: 'Figma'},
-    { text: 'Photoshop', icon: 'Photoshop'},
-    
+    { text: 'Figma', icon: figmaIcon},
+    { text: 'Photoshop', icon: photoshopIcon},
     
   ];
 
