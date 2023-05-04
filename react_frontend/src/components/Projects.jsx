@@ -1,8 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/proj01.png";
+import projImg2 from "../assets/img/proj02.png";
+import projImg3 from "../assets/img/proj03.png";
+import projImg4 from "../assets/img/proj04.png";
+import projImg5 from "../assets/img/proj05.png";
+import projImg6 from "../assets/img/proj06.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
 
@@ -28,17 +31,17 @@ export const Projects = () => {
     {
       title: "Motion Detector",
       description: "Software Development",
-      imgUrl: projImg1,
+      imgUrl: projImg4,
     },
     {
-      title: "Geocoder Website",
+      title: "Personal Website",
       description: "Web Development",
-      imgUrl: projImg2,
+      imgUrl: projImg5,
     },
     {
-      title: "Medical Consulting Website",
+      title: "Doctor's Consulting Website",
       description: "Web Development",
-      imgUrl: projImg3,
+      imgUrl: projImg6,
     },
   ];
 

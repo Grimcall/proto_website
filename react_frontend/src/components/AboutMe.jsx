@@ -6,12 +6,10 @@ export const AboutMe = () => {
         <section className="aboutme" id="aboutme">
 
             <Container>
-                <Row>
-                    
+                <Row>                    
                     <Col md={6}>
                          <img id="myImage" src={myselfImage} alt="Myself!" />
                     </Col>
-
                     <Col md={6}>
                         <h1>Who am I?</h1>
                         <p>As stated above, I'm Diego Parra (nice to meet you) and I'm also a systems engineer.</p>
@@ -23,12 +21,9 @@ export const AboutMe = () => {
                         </br>At the end of the day, that's what being an engineer is all about: </p>
                         <h2>Solving practical problems, one piece at a time.</h2>
                     </Col>
-
                 </Row>
             </Container>
-
         </section>
-
     )
 
 }

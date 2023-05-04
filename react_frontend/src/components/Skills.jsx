@@ -44,7 +44,10 @@ export const Skills = () => {
     { text: 'Java', icon: javaIcon },
     { text: 'HTML', icon: htmlIcon },
     { text: 'CSS', icon: cssIcon },
-    { text: 'SQLite', icon: sqliteIcon },
+    { text: 'SQLite', icon: sqliteIcon},
+    { text: 'Figma', icon: 'Figma'},
+    { text: 'Photoshop', icon: 'Photoshop'},
+    
     
   ];
 
