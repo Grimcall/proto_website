@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import myselfImage from "../assets/img/jacket.png"
+import myselfImage from "../assets/img/me but cooler.png"
 
 export const AboutMe = () => {
     return (

@@ -506,7 +506,11 @@ tbody{
   height: 250px;
 }
 
-
+@media (max-width: 576px) {
+  .proj-imgbx{
+    max-width: 550px;
+  }
+} 
 
 .proj-imgbx img{
   object-fit: cover;
