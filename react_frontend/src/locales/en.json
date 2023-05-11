@@ -1,0 +1,19 @@
+{
+    "AboutMe": {        
+            "h1_text":"Who am I?",
+            "p1": "As stated above, I'm Diego Parra (nice to meet you) and I'm also a systems engineer.",
+            "h2_text": "That means I solve problems.",
+            "p2":"Not problems such as 'what is beauty?', because that would fall within the purview of your conundrums of philosophy...",
+            "h2_text_2": "I solve practical problems.",
+            "p3": "Dealing with software these days can be daunting, complicated and even scary...  especially when you're dealing with newer, more complex systems! However, that's where I come in.\nI have the knowledge, skills, and experience to help you navigate these challenges and come out on top. I'm not satisfied until I've found a solution that meets your needs and exceeds your expectations: whether it's developing software, troubleshooting systems, or finding ways to optimize your infrastructure, I'm here to help.\nAt the end of the day, that's what being an engineer is all about: ",
+            "h2_text_3": "Solving practical problems, one piece at a time."  
+
+    },
+    "Banner":{
+            "welcome":"Welcome to my website!",
+            "h1_greeting": "Hi!\nI'm Diego Parra,\nSystems Engineer.",
+            "p": "I'm a systems engineer graduate with a passion for software, web & mobile applications development and UI/UX design utilizing systems-oriented paradigms.\nMy main focus is on backend development, with my strongest programming language being Python.",
+            "lets-connect": "Let's talk."
+        }
+}
+
