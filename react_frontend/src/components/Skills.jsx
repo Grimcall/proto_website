@@ -26,9 +26,12 @@ import cssIcon from "../assets/img/skill-icons/css.png";
 import sqliteIcon from "../assets/img/skill-icons/sqlite.png";
 import figmaIcon from "../assets/img/skill-icons/figma.png";
 import photoshopIcon from "../assets/img/skill-icons/ps.png";
+import { Trans, useTranslation } from "react-i18next";
 
 
 export const Skills = () => {
+
+  const {t} = useTranslation();
 
   const tableData = [
     { text: 'Python', icon: pythonIcon},
@@ -83,11 +86,9 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>What do I do?</h2>
-                        <p>I have been coding for aproximately three and a half years.<br>
-                        </br>The tools and programming languages below are what I'm going to use to help you with what you need.<br>
-                        </br>Don't forget, however, that these are *just* tools.</p>
-                        <p style={{ fontWeight:'bold'}}>What matters is the hand that wields them.</p>
+                        <h2>{t("Skills.h2_text")}</h2>
+                        <p><Trans i18nKey="Skills.p1" components={{ 1: <br/> }} /></p>
+                        <p style={{ fontWeight:'bold'}}>{t("Skills.p2")}</p>
 
                           <Table borderless className="skilltable">
                             <tbody>
@@ -108,25 +109,25 @@ export const Skills = () => {
                     </tbody>
                     </Table>
 
-                              <h3>My main focus is on software development.<br></br>Specifically, working on the systems that make software work: the back-end.</h3>
-                              <p>However, that doesn't mean I can't help you with anything else.<br></br>Within my array of skills, creating friendly user interfaces is one of them.</p>
+                              <h3><Trans i18nKey="Skills.h3" components={{ 1: <br/> }} /></h3>
+                              <p><Trans i18nKey="Skills.p3" components={{ 1: <br/> }} /></p>
                               
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="" />
-                                <h5>Software Development</h5>
+                                <h5>{t("Skills.software-dev")}</h5>
                             </div>
                             <div className="item">
                                 <img src={meter3} alt="" />
-                                <h5>Web App Design</h5>
+                                <h5>{t("Skills.web-app-design")}</h5>
                             </div>
                             <div className="item">
                                 <img src={meter2} alt="" />
-                                <h5>UI/UX Design</h5>
+                                <h5>{t("Skills.uiux-design")}</h5>
                             </div>    
                             <div className="item">
                                 <img src={meter1} alt="" />
-                                <h5>Backend Development</h5>
+                                <h5>{t("Skills.backend-dev")}</h5>
                             </div>                           
                         </Carousel>
                     </div>                    
