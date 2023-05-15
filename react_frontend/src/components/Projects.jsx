@@ -8,8 +8,12 @@ import projImg5 from "../assets/img/proj05.png";
 import projImg6 from "../assets/img/proj06.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
+import { Trans, useTranslation } from "react-i18next";
+
 
 export const Projects = () => {
+
+  const {t} = useTranslation();
 
   const projects = [
     {
@@ -53,8 +57,10 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Below are some of the projects I've worked on.<br></br>Please note that I am not able to showcase everything about these projects for the purposes of maintaining client privacy.</p>
+
+                <h2>{t("Projects.h2_title")}</h2>
+                <p><Trans i18nKey="Projects.p1" components={{ 1: <br/> }} /></p>
+                
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
