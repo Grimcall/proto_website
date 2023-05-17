@@ -1,26 +1,18 @@
-from flask import Flask, jsonify
+from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return jsonify({"message": "Sup"})
 
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    # Access form data
+    data = request.form
 
-@app.route('/translate')
-def translate():
-   translate = {
-  
-    'en':{
+    # Process the form data (e.g., save to a database, send an email)
+    # ...
 
-    },
-  
-    'es' : {
-
-    }
-  
-   }
-   return jsonify(translate)
+    # Return a response
+    return 'Form submitted successfully'
 
 if __name__ == '__main__':
     app.run(debug=True)

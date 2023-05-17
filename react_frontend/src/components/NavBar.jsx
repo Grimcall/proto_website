@@ -76,17 +76,21 @@ export const NavBar = () => {
             
             <div className="languageSwitcher">
               <NavDropdown title={selectedLanguage === 'es' ? 'ES' : 'EN'} id="language-dropdown">
-                <NavDropdown.Item onClick={() => handleLanguageSwitch('es')}>Español</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleLanguageSwitch('en')}>English</NavDropdown.Item> 
+                
+                <NavDropdown.Item onClick={() => handleLanguageSwitch('es')}>
+                Español
+                </NavDropdown.Item>
+                
+                <NavDropdown.Item onClick={() => handleLanguageSwitch('en')}>
+                English
+                </NavDropdown.Item> 
+
               </NavDropdown>
             </div>
             
               <HashLink to='#connect'>
                 <button className="vvd"><span>{t("NavBar.lets-connect")}</span></button>
-              </HashLink>
-
-
-              
+              </HashLink>              
             </span>
           </Navbar.Collapse>
         </Container>

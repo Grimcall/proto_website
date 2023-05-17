@@ -244,7 +244,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-content: center;
   line-height: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
-}
+  }
 .languageSwitcher a::before {
   content: "";
   width: 42px;
@@ -267,7 +267,7 @@ transition: 0.3s ease-in-out;
   display: block;
   overflow: hidden;
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden;  
 }
 
 .dropdown.show .dropdown-menu {
@@ -279,9 +279,17 @@ transition: 0.3s ease-in-out;
 
   max-height: 190px;
   opacity: 1;
-  visibility: visible;
+  visibility: visible;  
 }
 
+
+a.dropdown-item:hover {
+  background-color: rgb(190, 185, 255);
+}
+
+a.dropdown-item:active {
+  background-color: rgb(93, 81, 255);
+}
 /*
 .languageSwitcher a:hover::before {
   transform: scale(1);
