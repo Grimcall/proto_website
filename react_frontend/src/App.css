@@ -230,6 +230,72 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+#language-dropdown{
+  color: white;
+}
+.languageSwitcher{
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.languageSwitcher a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+transition: 0.3s ease-in-out;
+}
+
+.dropdown .dropdown-menu {
+  -webkit-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
+  -moz-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
+  -ms-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
+  -o-transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
+  transition: max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s;
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdown.show .dropdown-menu {
+  -webkit-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
+  -moz-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
+  -ms-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
+  -o-transition: max-height 0.3s, opacity 0.2s, visibility 0s;
+  transition: max-height 0.3s, opacity 0.2s, visibility 0s;
+
+  max-height: 190px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+.languageSwitcher a:hover::before {
+  transform: scale(1);
+}
+.languageSwitcher a img {
+width: 40%;
+z-index: 1;
+transition: 0.3s ease-in-out;
+}
+.languageSwitcher a:hover img {
+filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+*/
+
 /************ Banner Css ************/
 .banner {
   margin-top: 0;

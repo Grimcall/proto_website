@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
@@ -8,12 +8,20 @@ import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-
 export const NavBar = () => {
 
+  const { t, i18n } = useTranslation();
 
-  const {t} = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
+  const handleLanguageSwitch = (languages) => {
+    i18n.changeLanguage(languages);
+  };
+
+  useEffect(() => {
+    setSelectedLanguage(i18n.language);
+  }, [i18n.language]);
+  
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
@@ -61,14 +69,24 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-              <a href="https://www.linkedin.com/in/diego-parra-838739212/"><img src={navIcon1} alt="LinkedIn" /></a>
-              <a href="https://github.com/Grimcall"><img src={navIcon2} alt="GitHub" /></a>
-              <a href="#"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/diego-parra-838739212/"><img src={navIcon1} alt="LinkedIn" /></a>
+                <a href="https://github.com/Grimcall"><img src={navIcon2} alt="GitHub" /></a>
+                <a href="#"><img src={navIcon3} alt="" /></a>              
               </div>
+            
+            <div className="languageSwitcher">
+              <NavDropdown title={selectedLanguage === 'es' ? 'ES' : 'EN'} id="language-dropdown">
+                <NavDropdown.Item onClick={() => handleLanguageSwitch('es')}>Español</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleLanguageSwitch('en')}>English</NavDropdown.Item> 
+              </NavDropdown>
+            </div>
+            
               <HashLink to='#connect'>
                 <button className="vvd"><span>{t("NavBar.lets-connect")}</span></button>
               </HashLink>
-              <button className="languageSwitcher">X</button>
+
+
+              
             </span>
           </Navbar.Collapse>
         </Container>
