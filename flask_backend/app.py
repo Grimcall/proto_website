@@ -41,7 +41,8 @@ def submit():
     message['To'] = mail_username
     message['Subject'] = "Test"
 
-    body = 'Here is the form submission data:\n\nFirst Name: {}\nLast Name: {}\nEmail: {}\nPhone: {}\nMessage: {}'.format(        form_data['first_name'], 
+    body = 'Here is the form submission data:\n\nFirst Name: {}\nLast Name: {}\nEmail: {}\nPhone: {}\nMessage: {}'.format(
+        form_data['first_name'], 
         form_data['last_name'], 
         form_data['email'], 
         form_data['phone'], 
