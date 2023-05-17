@@ -12,8 +12,8 @@ export const Contact = () => {
   let sending = t("Contact.sending");
 
   const formInitialDetails = {
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     message: ''
@@ -68,10 +68,10 @@ export const Contact = () => {
                 <form onSubmit={handleSubmit}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder={t("Contact.first-name")} onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                      <input type="text" value={formDetails.first_name} placeholder={t("Contact.first-name")} onChange={(e) => onFormUpdate('first_name', e.target.value)} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lastName} placeholder={t("Contact.last-name")} onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                      <input type="text" value={formDetails.last_name} placeholder={t("Contact.last-name")} onChange={(e) => onFormUpdate('last_name', e.target.value)}/>
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input type="email" value={formDetails.email} placeholder={t("Contact.email-address")} onChange={(e) => onFormUpdate('email', e.target.value)} />

@@ -1,5 +1,7 @@
 from flask import Flask, request
-from flask_mail import Mail, Message
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -16,25 +18,38 @@ with open('mail_data.txt', 'r') as config:
         elif key == 'PASSWORD':
             mail_password = value
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = mail_username
-app.config['MAIL_PASSWORD'] = mail_password
+print(mail_username)
+print(mail_password)
 
-mail = Mail(app)
+try:
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(mail_username, mail_password)
+
+    print("Login successful.")
+except Exception as e:
+    print(str(e))
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    form_data = request.form
+    form_data = request.json
     
-    message = Message('Form Submission', sender = mail_username, recipients = [mail_username])
-    
-    message.body = 'Here is the form submission data:\n\nFirst Name: {}\nLast Name: {}\nEmail: {}\nMessage: {}'.format(
-        form_data['first_name'], form_data['last_name'], form_data['email'], form_data['message'])
+    print(form_data)
 
-    mail.send(message)
-    
+    message = MIMEMultipart()
+    message['From'] = mail_username
+    message['To'] = mail_username
+    message['Subject'] = "Test"
+
+    body = 'Here is the form submission data:\n\nFirst Name: {}\nLast Name: {}\nEmail: {}\nPhone: {}\nMessage: {}'.format(        form_data['first_name'], 
+        form_data['last_name'], 
+        form_data['email'], 
+        form_data['phone'], 
+        form_data['message'])
+
+    message.attach(MIMEText(body, 'plain'))
+
+    server.sendmail(mail_username, mail_username, message.as_string())
     #Temp return value.
     return 'Form submitted successfully'
 
