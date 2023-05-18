@@ -50,10 +50,24 @@ def submit():
 
     message.attach(MIMEText(body, 'plain'))
 
-    server.sendmail(mail_username, mail_username, message.as_string())
+    server.sendmail(from_addr = mail_username, 
+                    to_addrs = mail_username, 
+                    msg = message.as_string())
+    
+    answer = MIMEMultipart()
+    answer['From'] = mail_username
+    answer['To'] = form_data['email']
+    answer['Subject'] = "Thank you for reaching out!"
+
+    answer_body = "Thank you for reaching out {}! I will get back to you as soon as posible.\nYou can also find me on: ".format(form_data['first_name'])
+
+    answer.attach(MIMEText(answer_body, 'plain'))
+    server.sendmail(from_addr = mail_username,
+                    to_addrs = form_data['email'],
+                    msg = answer.as_string())
+
     #Temp return value.
     return 'Form submitted successfully'
-
 
 if __name__ == '__main__':
     app.run(debug=True)
