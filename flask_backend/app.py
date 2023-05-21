@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -18,8 +18,18 @@ with open('mail_data.txt', 'r') as config:
         elif key == 'PASSWORD':
             mail_password = value
 
-print(mail_username)
-print(mail_password)
+with open('recaptchaKeys.txt', 'r') as recaptchaKeys:
+    for line in recaptchaKeys:
+        key, value = line.strip().split('=')
+        if key == 'SITEKEY':
+            recaptcha_sitekey = value
+        elif key == 'SECRETKEY':
+            recaptcha_secretkey = value
+
+print("EMAIL:" + mail_username)
+print("PASSWORD:" + mail_password)
+print("SITEKEY:" + recaptcha_sitekey)
+#print("SECRETKEY:" + recaptcha_secretkey)
 
 try:
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -68,6 +78,10 @@ def submit():
 
     #Temp return value.
     return 'Form submitted successfully'
+
+@app.route('/recaptcha_site_key', methods=['GET'])
+def get_recaptcha_site_key():
+    return jsonify({"site_key": recaptcha_sitekey})
 
 if __name__ == '__main__':
     app.run(debug=True)
