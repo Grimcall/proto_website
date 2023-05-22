@@ -79,10 +79,6 @@ def submit():
     #Temp return value.
     return 'Form submitted successfully'
 
-@app.route('/recaptcha_site_key', methods=['GET'])
-def get_recaptcha_site_key():
-    return jsonify({"site_key": recaptcha_sitekey})
-
 if __name__ == '__main__':
     app.run(debug=True)
 

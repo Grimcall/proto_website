@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import TrackVisibility from 'react-on-screen';
 import { useTranslation } from "react-i18next";
-import {ReCAPTCHA} from "react-google-recaptcha";
-
+import { ReCAPTCHA } from "react-google-recaptcha";
 
 export const Contact = () => {
   const {t} = useTranslation();
@@ -22,7 +21,7 @@ export const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState(send);
   const [status, setStatus] = useState({});
-  const [recaptchaValue, setRecaptchaValue] = useState('');
+  const captchaRef = useRef(null)
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
@@ -31,17 +30,11 @@ export const Contact = () => {
       })
   }
 
-  const handleCaptchaChange = (value) => {
-    setRecaptchaValue(value);
-  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText(sending);
-
-    const data = {
-      ...formDetails,
-      recaptcha: recaptchaValue
-    };
+    
+    const token = captchaRef.current.getValue();
 
     let response = await fetch("http://localhost:5000/submit", {
       method: "POST",
@@ -58,22 +51,8 @@ export const Contact = () => {
     } else {
       setStatus({ success: false, message: t("Contact.unsuccessful")});
     }
+    captchaRef.current.reset();
   };
-
-  useEffect(() => {
-    const fetchRecaptchaSiteKey = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/recaptcha_site_key");
-        const data = await response.json();
-        const siteKey = data.site_key;
-        setRecaptchaValue(siteKey);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    fetchRecaptchaSiteKey();
-  }, []);
   
   return (
     <section className="contact" id="connect">
@@ -107,13 +86,16 @@ export const Contact = () => {
                     </Col>
                     <Col size={12} className="px-1">
                       <textarea rows="6" value={formDetails.message} placeholder={t("Contact.message")}onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <ReCAPTCHA
-                      sitekey={recaptchaValue}
-                      onChange={handleCaptchaChange}
-                      />
+
                       <button type="submit"><span>{buttonText}</span></button>
-                    </Col>
-                    {
+
+                      <ReCAPTCHA 
+                          className="reCAPTCHA"
+                          sitekey={process.env.SITEKEY}
+                          ref={captchaRef}
+                      />
+                      
+                    </Col>                    {
                       status.message &&
                       <Col>
                         <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
