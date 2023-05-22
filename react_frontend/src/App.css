@@ -234,8 +234,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: white;
 }
 .languageSwitcher{
-  width: 42px;
-  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
@@ -245,6 +245,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
   }
+
 .languageSwitcher a::before {
   content: "";
   width: 42px;

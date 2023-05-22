@@ -3,9 +3,16 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+from flask_limiter import RateLimitExceeded
 
 app = Flask(__name__)
 CORS(app)
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+)
 
 mail_username = "N/A"
 mail_password = "N/A"
@@ -40,7 +47,15 @@ try:
 except Exception as e:
     print(str(e))
 
+@app.errorhandler(RateLimitExceeded)
+def handle_limit_exceeded(e):
+    error_msg = "Too many requests in a short period of time, please try again later."
+    error_msg_es = "Muchas peticiones en un corto periodo de tiempo, por favor inténtelo más tarde."
+
+    return jsonify(error=error_msg), 429
+
 @app.route('/submit', methods=['POST'])
+@limiter.limit("10/minute")
 def submit():
     form_data = request.json
     
