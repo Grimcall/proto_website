@@ -20,9 +20,9 @@
     },
 
     "Banner":{
-        "welcome":"¡Bienvenidx a mi página!",
+        "welcome":"¡Bienvenid@ a mi página!",
         "h1_greeting": "¡Hola!<br/>Soy Diego Parra,<br/>Ingeniero de Sistemas.",
-        "p": "Soy recién graduado en ingeniería de sistemas y me apasionan el desarrollo de software, desarollo de aplicaciones web y móviles al igual que el diseño de interfaces gráficas utilizando paradigmas orientados a sistemas.<br/><br/>Mi enfoque principal es el desarrollo de back-end, siendo Python mi lenguaje de programación más sólido.",
+        "p": "Soy recién graduado en ingeniería de sistemas con tendencias al desarrollo de software, desarollo de aplicaciones web y móviles al igual que el diseño de interfaces gráficas utilizando paradigmas orientados a sistemas.<br/><br/>Mi enfoque principal es el desarrollo de back-end, siendo Python mi lenguaje de programación más sólido.",
         "lets-connect": "Conversémos."
     },
 

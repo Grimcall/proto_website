@@ -7,13 +7,13 @@ import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import CV_es from '../assets/DP_CV_es.pdf';
+import CV_en from '../assets/DP_CV_en.pdf'; 
 
 export const NavBar = () => {
 
   const { t, i18n } = useTranslation();
-
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
-
   const handleLanguageSwitch = (languages) => {
     i18n.changeLanguage(languages);
   };
@@ -43,6 +43,8 @@ export const NavBar = () => {
     setActiveLink(value);
   }
 
+  const cvLink = selectedLanguage === 'es' ? CV_es : CV_en;
+
   return (
     <Router>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
@@ -71,7 +73,7 @@ export const NavBar = () => {
               <div className="social-icon">
                 <a href="https://www.linkedin.com/in/diego-parra-838739212/"><img src={navIcon1} alt="LinkedIn" /></a>
                 <a href="https://github.com/Grimcall"><img src={navIcon2} alt="GitHub" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>              
+                <a href={cvLink} target="_blank" rel="noreferrer"><img src={navIcon3} alt="" /></a>              
               </div>
             
             <div className="languageSwitcher">
