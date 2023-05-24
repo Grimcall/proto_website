@@ -8,6 +8,8 @@
 # testing
 /coverage
 keys.env
+*.psd
+
 
 # production
 /build
