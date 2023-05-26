@@ -28,8 +28,8 @@
 
     "Skills":{
         "h2_text":"¿Qué hago?",
-        "p1": "He estado programando por aproximadamente tres años y medio.<br/>Las herramientas y los lenguajes de programación a continuación son los que voy a usar para ayudarte con lo que necesitas.<br/>Sin embargo, no olvides que estas son *solo* herramientas.",
-        "p2": "Lo que verdaderamente son la mano que las utiliza.",
+        "p1": "He estado programando por aproximadamente tres años y medio.<br/>Las herramientas y los lenguajes de programación a continuación son los que voy a usar para ayudarte con lo que necesitas.<br/>Sin embargo, no olvides que estas son *solo* herramientas, solo recuerda que...",
+        "p2": "Todo es código. Si escuchas atentamente, puedes oír los números.",
         "h3": "Mi enfoque principal es el desarrollo de software.<br/>Específicamente, desarrollar los sistemas que hacen que el software funcione: el back-end.",
         "p3": "Sin embargo, eso no significa que no pueda ayudarle con nada más.<br/>Dentro de mi variedad de habilidades, la creación de interfaces de usuario es una de ellas. Tambien soy bilingüe, lo cual me permite localizar documentación en distintos idiomas y comunicarme mejor con mis clientes.",
         "software-dev": "Desarollo de Software",

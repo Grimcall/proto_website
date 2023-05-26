@@ -28,8 +28,8 @@
 
         "Skills":{
             "h2_text":"What do I do?",
-            "p1": "I have been coding for aproximately three and a half years.<br/>The tools and programming languages below are what I'm going to use to help you with what you need.<br/>Don't forget, however, that these are *just* tools.",
-            "p2": "What matters is the hand that wields them.",
+            "p1": "I have been coding for aproximately three and a half years.<br/>The tools and programming languages below are what I'm going to use to help you with what you need.<br/>Don't forget, however, that these are just tools. Just remember...",
+            "p2": "It’s all code. If you listen closely, you can hear the numbers.",
             "h3": "My main focus is on software development.<br/>Specifically, working on the systems that make software work: the back-end.",
             "p3": "However, that doesn't mean I can't help you with anything else.<br/>Within my array of skills, creating friendly user interfaces is one of them. I'm also bilingual, whicha allows me to document myself better on various subjects and communicate with my clients in multiple languages.",
             "software-dev": "Software Development",
