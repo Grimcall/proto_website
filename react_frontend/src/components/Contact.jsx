@@ -36,7 +36,7 @@ export const Contact = () => {
     
     const token = captchaRef.current.getValue();
 
-    let response = await fetch("http://localhost:5000/submit", {
+    let response = await fetch("https://cosmic-itechnology.onrender.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
