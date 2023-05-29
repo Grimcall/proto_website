@@ -92,7 +92,7 @@ def submit():
                     msg = answer.as_string())
 
     #Temp return value.
-    return 'Form submitted successfully'
+    return jsonify("Success", 200)
 
 if __name__ == '__main__':
     app.run(debug=True)

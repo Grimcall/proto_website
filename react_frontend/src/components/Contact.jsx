@@ -36,22 +36,40 @@ export const Contact = () => {
     
     const token = captchaRef.current.getValue();
 
-    let response = await fetch("https://cosmic-itechnology.onrender.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText(send);
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ success: true, message: t("Contact.successful")});
-    } else {
-      setStatus({ success: false, message: t("Contact.unsuccessful")});
+    try{
+    {/*https://cosmic-itechnology.onrender.com*/}
+    {/*http://localhost:5000*/}
+
+      let response = await fetch("http://localhost:5000/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+
+      let result = await response.json();
+      setFormDetails(formInitialDetails);
+      
+      if (result[1] === 200) {
+        setStatus({ success: true, message: t("Contact.successful")});
+        console.log("Message sent successfully: ", result);
+      } 
+      else {
+        setStatus({ success: false, message: t("Contact.unsuccessful")});
+        console.log("Message not sent: ", result);
+      }
+      setFormDetails(formInitialDetails);
+      captchaRef.current.reset();
+
+    } catch (error) {
+      setStatus({ success: false, message: t("Contact.unsuccessful") });
+      setButtonText(t("Contact.send"));
+      console.log("Error:", error);
+      } 
+      finally {
+        setButtonText(send);
     }
-    captchaRef.current.reset();
   };
   
   return (
@@ -94,13 +112,10 @@ export const Contact = () => {
                           sitekey={process.env.SITEKEY}
                           ref={captchaRef}
                       />
-                      
-                    </Col>                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
+                    
+                    {status.message && <p className={status.success === false ? "danger" : "success"}>{status.message}</p>}
+
+                    </Col>                
                   </Row>
                 </form>
               </div>}
