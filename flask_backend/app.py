@@ -33,6 +33,9 @@ with open('recaptchaKeys.txt', 'r') as recaptchaKeys:
         elif key == 'SECRETKEY':
             recaptcha_secretkey = value
 
+with open("templates/email.html", "r") as file:
+    html = file.read()
+
 print("EMAIL:" + mail_username)
 print("PASSWORD:" + mail_password)
 print("SITEKEY:" + recaptcha_sitekey)
@@ -64,7 +67,8 @@ def submit():
     message = MIMEMultipart()
     message['From'] = mail_username
     message['To'] = mail_username
-    message['Subject'] = "Test"
+    subject = "COSMIC.IT: " + form_data['first_name'] + " " + form_data['last_name']
+    message['Subject'] = subject
 
     body = 'Here is the form submission data:\n\nFirst Name: {}\nLast Name: {}\nEmail: {}\nPhone: {}\nMessage: {}'.format(
         form_data['first_name'], 
@@ -82,11 +86,11 @@ def submit():
     answer = MIMEMultipart()
     answer['From'] = mail_username
     answer['To'] = form_data['email']
-    answer['Subject'] = "Thank you for reaching out!"
+    answer['Subject'] = "¡Gracias! / Thank you!"
 
-    answer_body = "Thank you for reaching out {}! I will get back to you as soon as posible.\nYou can also find me on: ".format(form_data['first_name'])
+    answer_body = html
 
-    answer.attach(MIMEText(answer_body, 'plain'))
+    answer.attach(MIMEText(answer_body, 'html'))
     server.sendmail(from_addr = mail_username,
                     to_addrs = form_data['email'],
                     msg = answer.as_string())

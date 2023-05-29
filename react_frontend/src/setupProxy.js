@@ -5,6 +5,7 @@ module.exports = function(app) {
     '/api',
     createProxyMiddleware({
       /*https://cosmic-itechnology.onrender.com'*/
+      /*http://localhost:5000*/
       target: 'http://localhost:5000',
       changeOrigin: true,
     })
