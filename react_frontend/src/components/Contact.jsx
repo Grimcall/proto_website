@@ -40,7 +40,7 @@ export const Contact = () => {
     {/*https://cosmic-itechnology.onrender.com*/}
     {/*http://localhost:5000*/}
 
-      let response = await fetch("http://localhost:5000/submit", {
+      let response = await fetch("https://cosmic-itechnology.onrender.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
