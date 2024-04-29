@@ -1,0 +1,61 @@
+{
+    "NavBar":{
+        "home": "Inicio",
+        "aboutme": "Sobre Mí",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "lets-connect": "Contáctame"
+
+    },
+
+    "AboutMe": {        
+        "h1_text":"¿Quién soy yo?",
+        "p1": "Como dije anteriormente, soy Diego Parra (encantado de conocerle) y soy ingeniero de sistemas.",
+        "h2_text": "Eso significa que soluciono problemas.",
+        "p2":"No problemas como '¿qué es la belleza?', porque eso caería dentro del ámbito de tu perspectiva y filosofía...",
+        "h2_text_2": "Soluciono problemas prácticos.",
+        "p3": "Lidiar con software en esta época puede ser engorroso, complicado y difícil... ¡especialmente cuando tratas con sistemas más nuevos y complejos! Sin embargo, ahí es donde entro yo.<br/><br/>Tengo el conocimiento, las habilidades y la experiencia para ayudarle a superar estos desafíos y encaminarlo a la victoria. No estoy satisfecho hasta que logre encontrar una solución que satisfaga sus necesidades y supere sus expectativas: ya sea desarrollando software, solucionando problemas de sistemas o buscando formas de optimizar su infraestructura, estoy aquí para ayudarle.<br/><br/>Al final del día, de eso se trata ser ingeniero: ",
+        "h2_text_3": "Solucionar problemas prácticos, una pieza a la vez."
+
+    },
+
+    "Banner":{
+        "welcome":"¡Bienvenid@ a mi página!",
+        "h1_greeting": "¡Hola!<br/>Soy Diego Parra,<br/>Ingeniero de Sistemas.",
+        "p": "Soy recién graduado en ingeniería de sistemas con tendencias al desarrollo de software, desarollo de aplicaciones web y móviles al igual que el diseño de interfaces gráficas utilizando paradigmas orientados a sistemas.<br/><br/>Mi enfoque principal es el desarrollo de back-end, siendo Python mi lenguaje de programación más sólido.",
+        "lets-connect": "Conversémos."
+    },
+
+    "Skills":{
+        "h2_text":"¿Qué hago?",
+        "p1": "He estado programando por aproximadamente tres años y medio.<br/>Las herramientas y los lenguajes de programación a continuación son los que voy a usar para ayudarte con lo que necesitas.<br/>Sin embargo, no olvides que estas son *solo* herramientas, solo recuerda que...",
+        "p2": "Todo es código. Si escuchas atentamente, puedes oír los números.",
+        "h3": "Mi enfoque principal es el desarrollo de software.<br/>Específicamente, desarrollar los sistemas que hacen que el software funcione: el back-end.",
+        "p3": "Sin embargo, eso no significa que no pueda ayudarle con nada más.<br/>Dentro de mi variedad de habilidades, la creación de interfaces de usuario es una de ellas. Tambien soy bilingüe, lo cual me permite localizar documentación en distintos idiomas y comunicarme mejor con mis clientes.",
+        "software-dev": "Desarollo de Software",
+        "web-app-design": "Diseño de Aplicaciones Web",
+        "uiux-design": "Diseño UI/UX",
+        "backend-dev": "Desarrollo Backend"        
+
+    },
+        
+    "Projects":{
+         "h2_title": "Proyectos",
+         "p1": "A continuación se muestran algunos de los proyectos en los que he trabajado.<br/>Tenga en cuenta que no puedo mostrar todo sobre estos proyectos a propositos de mantener la privacidad de mis clientes."
+    },
+
+    "Contact":{
+        "title": "Conversémos.",
+        "first-name": "Nombre",
+        "last-name": "Apellidos",
+        "email-address": "Correo Electrónico",
+        "phone": "Número Telefónico (Opcional)",
+        "message": "Mensaje",
+        "send": "Enviar",
+        "sending": "Enviando...",
+        "successful": "Mensaje enviado exitosamente.",
+        "unsuccessful": "Algo inesperado ocurrió, por favor intente de nuevo más tarde."
+
+    }
+}
+

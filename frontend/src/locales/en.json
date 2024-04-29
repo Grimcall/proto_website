@@ -1,0 +1,61 @@
+{
+        "NavBar":{
+                "home": "Home",
+                "aboutme": "About Me",
+                "skills": "Skills",
+                "projects": "Projects",
+                "lets-connect": "Let's Connect"
+        
+        },
+
+        "AboutMe": {        
+            "h1_text":"Who am I?",
+            "p1": "As stated above, I'm Diego Parra (nice to meet you) and I'm also a systems engineer.",
+            "h2_text": "That means I solve problems.",
+            "p2":"Not problems such as 'what is beauty?', because that would fall within the purview of your conundrums of philosophy...",
+            "h2_text_2": "I solve practical problems.",
+            "p3": "Dealing with software these days can be daunting, complicated and even scary...  especially when you're dealing with newer, more complex systems! However, that's where I come in.<br/><br/>I have the knowledge, skills, and experience to help you navigate these challenges and come out on top. I'm not satisfied until I've found a solution that meets your needs and exceeds your expectations: whether it's developing software, troubleshooting systems, or finding ways to optimize your infrastructure, I'm here to help.<br/><br/>At the end of the day, that's what being an engineer is all about: ",
+            "h2_text_3": "Solving practical problems, one piece at a time."  
+
+         },
+        
+         "Banner":{
+            "welcome":"Welcome to my website!",
+            "h1_greeting": "Hi!<br/>I'm Diego Parra,<br/>Systems Engineer.",
+            "p": "I'm a systems engineer graduate with a passion for software, web & mobile applications development and UI/UX design utilizing systems-oriented paradigms.<br/><br/>My main focus is on backend development, with my strongest programming language being Python.",
+            "lets-connect": "Let's talk."
+        },
+
+        "Skills":{
+            "h2_text":"What do I do?",
+            "p1": "I have been coding for aproximately three and a half years.<br/>The tools and programming languages below are what I'm going to use to help you with what you need.<br/>Don't forget, however, that these are just tools. Just remember...",
+            "p2": "It’s all code. If you listen closely, you can hear the numbers.",
+            "h3": "My main focus is on software development.<br/>Specifically, working on the systems that make software work: the back-end.",
+            "p3": "However, that doesn't mean I can't help you with anything else.<br/>Within my array of skills, creating friendly user interfaces is one of them. I'm also bilingual, whicha allows me to document myself better on various subjects and communicate with my clients in multiple languages.",
+            "software-dev": "Software Development",
+            "web-app-design": "Web App Design",
+            "uiux-design": "UI/UX Design",
+            "backend-dev": "Backend Development"        
+    
+        },
+        
+        "Projects":{
+             "h2_title": "Projects",
+             "p1": "Below are some of the projects I've worked on.<br/>Please note that I am not able to showcase everything about these projects for the purposes of maintaining client privacy."
+        },
+
+        "Contact":{
+                "title": "Let's talk.",
+                "first-name": "First Name",
+                "last-name": "Last Name",
+                "email-address": "Email Address",
+                "phone": "Phone No. (Optional)",
+                "message": "Message",
+                "send": "Send",
+                "sending": "Sending...",
+                "successful": "Message sent succesfully.",
+                "unsuccessful": "Something unexpected happened, please try again later."
+        
+        }
+}
+

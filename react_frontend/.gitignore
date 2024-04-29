@@ -12,7 +12,7 @@ keys.env
 
 
 # production
-
+src/projects
 
 # misc
 .DS_Store
